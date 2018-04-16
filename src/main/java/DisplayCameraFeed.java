@@ -1,4 +1,5 @@
 import org.opencv.core.Mat;
+import org.opencv.imgproc.Imgproc;
 import org.opencv.videoio.VideoCapture;
 import org.opencv.videoio.Videoio;
 import sun.security.ssl.Debug;
@@ -24,6 +25,7 @@ public class DisplayCameraFeed implements Runnable {
             //while(true){
                 if (camera.read(iframe)){
                     Debug.println("Frame Obtained","Captured Frame Width " +iframe.width() + " Height " + iframe.height());
+                    Imgproc.cvtColor(iframe,iframe,Imgproc.COLOR_BGR2GRAY);
                     frame.getCanvas().displayImage(CommonUtils.toBufferedImage(iframe));
                 }
             //}
