@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="org.openpnp:opencv:3.2.0-1" type="repository">
+    <properties maven-id="org.openpnp:opencv:3.2.0-1" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/openpnp/opencv/3.2.0-1/opencv-3.2.0-1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/openpnp/opencv/3.2.0-1/opencv-3.2.0-1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
