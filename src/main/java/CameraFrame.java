@@ -2,19 +2,24 @@ import javax.swing.*;
 import java.awt.*;
 
 public class CameraFrame extends JFrame {
-    CameraCanvas cameraCanvas;
+    DisplayPanel displayPanel;
     public CameraFrame() throws HeadlessException {
         initialize();
     }
     private void initialize() {
-        cameraCanvas=new CameraCanvas();
+        displayPanel =new DisplayPanel();
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setBounds(100, 100, (int)screenSize.getWidth(),(int) screenSize.getHeight());
+        this.setSize(screenSize);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.getContentPane().add(cameraCanvas, BorderLayout.CENTER);
+        this.getContentPane().add(displayPanel, BorderLayout.CENTER);
         this.setLocationRelativeTo(null);
+        this.setResizable(false);
+        this.setMinimumSize(new Dimension(300, 200));
+        this.setLocationRelativeTo(null);
+        this.getContentPane().setBackground(Color.black);
+        displayPanel.initializeComponent();
     }
-    public CameraCanvas getCanvas(){
-        return this.cameraCanvas;
+    public DisplayPanel getCanvas(){
+        return this.displayPanel;
     }
 }
