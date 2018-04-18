@@ -18,7 +18,7 @@ public class Main {
                                 while (true) {
                                     cf.getCanvas().updatePanel();
                                     SwingUtilities.updateComponentTreeUI(cf.getCanvas());
-                                    //Thread.sleep(50);
+                                    Thread.sleep(100);
                                 }
                             } catch(Exception v) {
                                 System.out.println(v);

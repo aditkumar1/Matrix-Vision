@@ -34,7 +34,7 @@ public class DisplayPanel extends JPanel {
             int character_initial = random.nextInt(TEXT.length());
             character = new JLabel("" + TEXT.charAt(character_initial));
             character.setFont(new Font("monospaced", Font.PLAIN, FONT_SIZE));
-            character.setForeground(new Color(0, 80, 0));
+            character.setForeground(new Color(0, 50+random.nextInt(50), 0));
             row.add(character);
         }
         return row;
