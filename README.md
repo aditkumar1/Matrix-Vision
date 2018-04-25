@@ -8,6 +8,7 @@ Procedure used to implement this->
 3) I highlighted all the contour pixels with dark green color with BGR value (0,255,0).<br/>
 4) I used JPanel to represent a row of random characters. And multiplte Japanels(rows) are used to fill the screen with random characters.<br/>
 5) For background matrix animation, I moved each panel row downwards to give a matrix rain simulation.<br/>
-6) In order to highlight image from camera, I have set of value of background pixels to light green.
+6) In order to highlight image from camera, I have set of value of background pixels to light green.<br/>
+7) Here is a sample taken using my webcam- <br/><img src="sample.png" alt="Sample" height="42" width="42">
 
 
