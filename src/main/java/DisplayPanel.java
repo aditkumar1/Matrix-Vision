@@ -8,10 +8,11 @@ import java.util.Random;
 
 public class DisplayPanel extends JPanel {
     static ArrayList<MatOfPoint> contourlist;
-    private static final int FONT_SIZE = 15;
-    private static final String TEXT = new String("あたアカサザジズゼゾシスセソキクケコイウエオジャな0123456789");
+    private static final int FONT_SIZE = 10;
+    private static final String TEXT = new String(" あたアカサザジズゼゾシスセソキクケコイウエオジャな0123456789");
     private static Random random = new Random();
     private static JPanel[] rows;
+    private static Color[] columnColors;
 
     public void initializeComponent(){
         this.setBackground(Color.black);
@@ -30,11 +31,16 @@ public class DisplayPanel extends JPanel {
         int totalNoOfCharacters= (this.getWidth() / FONT_SIZE)-1;
         row.setLayout(new GridLayout(0,totalNoOfCharacters));
         JLabel[] characters= new JLabel[totalNoOfCharacters];
+        if(columnColors==null)columnColors=new Color[totalNoOfCharacters];
+        int i=-1;
         for(JLabel character: characters){
+            i=i+1;
             int character_initial = random.nextInt(TEXT.length());
             character = new JLabel("" + TEXT.charAt(character_initial));
             character.setFont(new Font("monospaced", Font.PLAIN, FONT_SIZE));
-            character.setForeground(new Color(0, 50+random.nextInt(50), 0));
+            if(columnColors[i]==null)columnColors[i]=new Color(0, random.nextInt(100), 0);
+            character.setForeground(columnColors[i]);
+            columnColors[i]=new Color(0,(columnColors[i].getGreen()+3)%100,0);
             row.add(character);
         }
         return row;

@@ -1,5 +1,6 @@
 import org.opencv.core.Mat;
 import org.opencv.core.MatOfPoint;
+import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
 import org.opencv.videoio.VideoCapture;
 import org.opencv.videoio.Videoio;
@@ -26,7 +27,6 @@ public class DisplayCameraFeed implements Runnable {
             Mat iframe = new Mat();
             while(true){
                 if (camera.read(iframe)){
-                    Debug.println("Frame Obtained","Captured Frame Width " +iframe.width() + " Height " + iframe.height());
                     ArrayList<MatOfPoint> contourList = getContoursList(iframe);
                     frame.getCanvas().updateContour(contourList);
                 }
@@ -38,6 +38,12 @@ public class DisplayCameraFeed implements Runnable {
         Mat grayMat = new Mat();
         Mat cannyEdges = new Mat();
         Mat hierarchy = new Mat();
+        int frameWidth=frame.getCanvas().getWidth();
+        int frameHeight=frame.getCanvas().getHeight();
+        int imageWidth=frameWidth>0?frameWidth:originalMat.width();
+        int imageHeight=frameHeight>0?frameHeight:originalMat.height();
+        Size sz = new Size(imageWidth,imageHeight);
+        Imgproc.resize( originalMat, originalMat, sz );
         ArrayList<MatOfPoint> contourList = new ArrayList<MatOfPoint>();
         Imgproc.cvtColor(originalMat, grayMat, Imgproc.COLOR_BGR2GRAY);
         Imgproc.Canny(originalMat, cannyEdges, 10, 100);
