@@ -9,6 +9,6 @@ Procedure used to implement this->
 4) I used JPanel to represent a row of random characters. And multiplte Japanels(rows) are used to fill the screen with random characters.<br/>
 5) For background matrix animation, I moved each panel row downwards to give a matrix rain simulation.<br/>
 6) In order to highlight image from camera, I have set of value of background pixels to light green.<br/>
-7) Here is a sample taken using my webcam- <br/><img src="sample.png" alt="Sample" height="42" width="42">
+7) Here is a sample taken using my webcam (Download to view it clearly)- <br/>![alt text](https://github.com/aditkumar1/Matrix-Vision/blob/master/sample.PNG)
 
 

@@ -61,7 +61,7 @@ public class DisplayPanel extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(Color.GREEN);
+        g.setColor(new Color(0,255,0));
         if (contourlist != null) {
             synchronized (contourlist) {
                 for (MatOfPoint pointMatrx : contourlist) {
